@@ -21,7 +21,7 @@ export const profile = {
   ],
   stats: [
     { value: 4, suffix: "+", label: "Years shipping" },
-    { value: 6, suffix: "", label: "Featured products" },
+    { value: 7, suffix: "", label: "Featured products" },
     { value: 3, suffix: "", label: "Platforms: web, iOS, Android" },
   ],
 };
@@ -153,6 +153,18 @@ export const projects = [
       "Implemented Stripe subscriptions and two-way invoice sync with QuickBooks, Xero and Sage.",
     ],
     link: "https://quotem8.ai",
+  },
+  {
+    name: "Ashtra",
+    kind: "Salon-services platform",
+    featured: true,
+    stack: ["Microservices", "Real-time availability", "Authentication", "Payments"],
+    points: [
+      "Built frontend and backend features for a salon-services platform on a microservices architecture, keeping services modular and easy to maintain.",
+      "Developed online booking, service management and real-time availability for customers and salons.",
+      "Implemented user authentication, service scheduling and secure payment workflows.",
+    ],
+    link: "https://ashtra.ai/en",
   },
   {
     name: "Writetone",

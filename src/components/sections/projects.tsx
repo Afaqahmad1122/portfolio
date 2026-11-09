@@ -25,7 +25,9 @@ export function Projects() {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.55, delay: (i % 2) * 0.1 }}
             whileHover={{ y: -6 }}
-            className={cn(project.featured && "md:col-span-1")}
+            className={cn(
+              i === projects.length - 1 && i % 2 === 0 && "md:col-span-2",
+            )}
           >
             <Card className="group h-full transition-shadow hover:ring-primary/50 hover:shadow-[0_0_40px_-12px] hover:shadow-primary/40">
               <CardHeader>
