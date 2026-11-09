@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Globe, Smartphone } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SectionHeading } from "@/components/section-heading";
@@ -38,17 +38,6 @@ export function Projects() {
                       {project.kind}
                     </p>
                   </div>
-                  {project.link ? (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Visit ${project.name}`}
-                      className="rounded-full border border-border p-2 text-muted-foreground transition-colors group-hover:border-primary group-hover:text-primary"
-                    >
-                      <ArrowUpRight className="size-4" />
-                    </a>
-                  ) : null}
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -60,6 +49,28 @@ export function Projects() {
                     </li>
                   ))}
                 </ul>
+                {project.links.length > 0 ? (
+                  <div className="flex flex-wrap gap-2">
+                    {project.links.map((link) => (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${project.name} on ${link.label}`}
+                        className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-xs font-medium text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                      >
+                        {link.kind === "ios" ? (
+                          <Smartphone className="size-3.5" />
+                        ) : (
+                          <Globe className="size-3.5" />
+                        )}
+                        {link.label}
+                        <ArrowUpRight className="size-3" />
+                      </a>
+                    ))}
+                  </div>
+                ) : null}
                 <div className="flex flex-wrap gap-2">
                   {project.stack.map((tech) => (
                     <Badge key={tech} variant="outline" className="font-mono">

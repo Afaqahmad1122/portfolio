@@ -21,7 +21,7 @@ export const profile = {
   ],
   stats: [
     { value: 4, suffix: "+", label: "Years shipping" },
-    { value: 7, suffix: "", label: "Featured products" },
+    { value: 10, suffix: "", label: "Featured products" },
     { value: 3, suffix: "", label: "Platforms: web, iOS, Android" },
   ],
 };
@@ -130,7 +130,22 @@ export const experience = [
   },
 ];
 
-export const projects = [
+export type ProjectLink = {
+  label: string;
+  href: string;
+  kind: "web" | "ios";
+};
+
+export type Project = {
+  name: string;
+  kind: string;
+  featured: boolean;
+  stack: string[];
+  points: string[];
+  links: ProjectLink[];
+};
+
+export const projects: Project[] = [
   {
     name: "CourtMatch",
     kind: "Web App & Mobile App (iOS, Android)",
@@ -140,7 +155,10 @@ export const projects = [
       "Court reservation and club management platform for tennis, pickleball and padel clubs, covering bookings, memberships, leagues, lessons and check-ins.",
       "Web app serves club admins and members; the mobile app gives players booking, schedules and messaging on the go.",
     ],
-    link: "https://courtmatch.ai" as string | null,
+    links: [
+      { label: "Website", href: "https://courtmatch.ai", kind: "web" },
+      { label: "App Store", href: "https://apps.apple.com/pe/app/courtmatch/id6639599691?l=en-GB", kind: "ios" },
+    ],
   },
   {
     name: "Quotem8",
@@ -152,7 +170,7 @@ export const projects = [
       "Worked on the AI receptionist that handles incoming customer conversations and captures job details.",
       "Implemented Stripe subscriptions and two-way invoice sync with QuickBooks, Xero and Sage.",
     ],
-    link: "https://quotem8.ai",
+    links: [{ label: "Website", href: "https://quotem8.ai", kind: "web" }],
   },
   {
     name: "Ashtra",
@@ -164,7 +182,7 @@ export const projects = [
       "Developed online booking, service management and real-time availability for customers and salons.",
       "Implemented user authentication, service scheduling and secure payment workflows.",
     ],
-    link: "https://ashtra.ai/en",
+    links: [{ label: "Website", href: "https://ashtra.ai/en", kind: "web" }],
   },
   {
     name: "Writetone",
@@ -175,7 +193,7 @@ export const projects = [
       "Built paraphrasing, grammar correction, tone adjustment and summarization tools on top of LLM APIs.",
       "Designed reusable prompt templates for each tone and format, from emails and blogs to academic writing and social posts.",
     ],
-    link: "https://writetone.com",
+    links: [{ label: "Website", href: "https://writetone.com", kind: "web" }],
   },
   {
     name: "RAG Document Q&A Assistant",
@@ -187,7 +205,7 @@ export const projects = [
       "Split documents into chunks, generated embeddings and stored them in a vector database for semantic search.",
       "Retrieved the most relevant chunks per question and passed them to the LLM for grounded answers with source references.",
     ],
-    link: null,
+    links: [],
   },
   {
     name: "Health Direct",
@@ -197,7 +215,7 @@ export const projects = [
     points: [
       "Built a responsive healthcare platform giving users access to medical information and services, backed by a secure Node.js and MongoDB API.",
     ],
-    link: "https://www.healthdirect.gov.au",
+    links: [{ label: "Website", href: "https://www.healthdirect.gov.au", kind: "web" }],
   },
   {
     name: "Tritment",
@@ -207,7 +225,41 @@ export const projects = [
     points: [
       "Built a healthcare workflow platform with an intuitive Next.js interface and a scalable TypeScript backend, focused on performance and data security.",
     ],
-    link: "https://tritmint.com",
+    links: [{ label: "Website", href: "https://tritmint.com", kind: "web" }],
+  },
+  {
+    name: "RacquetMatch",
+    kind: "Mobile App (iOS)",
+    featured: false,
+    stack: ["iOS", "Mobile", "Maps"],
+    points: [
+      "Racket sports app for finding local games, leagues and gatherings near you.",
+      "Helps players find other players, coaches and courts, with a map view to locate courts nearby.",
+    ],
+    links: [{ label: "App Store", href: "https://apps.apple.com/pe/app/racquetmatch/id6484401926?l=en-GB", kind: "ios" }],
+  },
+  {
+    name: "TennisLand",
+    kind: "Mobile App (iOS)",
+    featured: false,
+    stack: ["iOS", "Mobile", "Maps"],
+    points: [
+      "Tennis-focused app for finding local games, events and gatherings.",
+      "Connects players of a similar level, lets them set up events together, and shows courts near you.",
+    ],
+    links: [{ label: "App Store", href: "https://apps.apple.com/pe/app/tennisland/id1671732869?l=en-GB", kind: "ios" }],
+  },
+  {
+    name: "Eventup.AI",
+    kind: "Mobile App (iOS)",
+    featured: false,
+    stack: ["iOS", "Mobile", "Real-time dashboard"],
+    points: [
+      "Event management app to create, manage and track all of your events in one place.",
+      "Live sales dashboard with revenue, tickets sold and check-ins in real time, plus sales trends by the hour.",
+      "Order tracking with sale status and guest details.",
+    ],
+    links: [{ label: "App Store", href: "https://apps.apple.com/pe/app/eventup-ai/id6753205303?l=en-GB", kind: "ios" }],
   },
 ];
 
