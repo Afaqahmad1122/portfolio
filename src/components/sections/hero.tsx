@@ -7,7 +7,7 @@ import {
   motion,
   useInView,
 } from "motion/react";
-import { ArrowDown, Mail, MapPin } from "lucide-react";
+import { ArrowDown, Mail, MapPin, MessageCircle } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { profile } from "@/data/resume";
@@ -152,6 +152,18 @@ export function Hero() {
             )}
           >
             <Mail /> Get in touch
+          </a>
+          <a
+            href={profile.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            className={cn(
+              buttonVariants({ variant: "ghost", size: "icon-lg" }),
+              "size-10",
+            )}
+          >
+            <MessageCircle />
           </a>
           <a
             href={profile.github}

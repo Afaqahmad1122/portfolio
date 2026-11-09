@@ -10,6 +10,8 @@ export const profile = {
   location: "Islamabad, Pakistan",
   availability: "Open to remote, US/UK/EU hours",
   email: "afaqahmadnaeem@gmail.com",
+  whatsapp: "https://wa.me/923098764667",
+  whatsappDisplay: "+92 309 876 4667",
   linkedin: "https://linkedin.com/in/afaq-ahmad-a92532237",
   github: "https://github.com/Afaqahmad1122",
   summary: [

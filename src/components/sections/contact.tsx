@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "motion/react";
-import { Check, Copy, Mail } from "lucide-react";
+import { Check, Copy, Mail, MessageCircle } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { Reveal } from "@/components/reveal";
@@ -58,6 +58,17 @@ export function Contact() {
               {copied ? <Check /> : <Copy />}
               {copied ? "Copied" : "Copy email"}
             </Button>
+            <a
+              href={profile.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                buttonVariants({ variant: "outline", size: "lg" }),
+                "h-10 px-5",
+              )}
+            >
+              <MessageCircle /> WhatsApp
+            </a>
             <a
               href={profile.linkedin}
               target="_blank"
