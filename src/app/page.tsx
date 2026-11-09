@@ -1,20 +1,28 @@
-"use client";
-
-import { motion } from "motion/react";
-import { Button } from "@/components/ui/button";
+import { Footer } from "@/components/footer";
+import { MotionProvider } from "@/components/motion-provider";
+import { Navbar } from "@/components/navbar";
+import { About } from "@/components/sections/about";
+import { Contact } from "@/components/sections/contact";
+import { Education } from "@/components/sections/education";
+import { Experience } from "@/components/sections/experience";
+import { Hero } from "@/components/sections/hero";
+import { Projects } from "@/components/sections/projects";
+import { Skills } from "@/components/sections/skills";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-6">
-      <motion.h1
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-4xl font-semibold tracking-tight"
-      >
-        Portfolio
-      </motion.h1>
-      <Button>Coming soon</Button>
-    </main>
+    <MotionProvider>
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Education />
+        <Contact />
+      </main>
+      <Footer />
+    </MotionProvider>
   );
 }
