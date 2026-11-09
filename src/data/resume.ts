@@ -138,7 +138,7 @@ export const projects = [
       "Court reservation and club management platform for tennis, pickleball and padel clubs, covering bookings, memberships, leagues, lessons and check-ins.",
       "Web app serves club admins and members; the mobile app gives players booking, schedules and messaging on the go.",
     ],
-    link: null as string | null,
+    link: "https://courtmatch.ai" as string | null,
   },
   {
     name: "Quotem8",
@@ -183,7 +183,7 @@ export const projects = [
     points: [
       "Built a responsive healthcare platform giving users access to medical information and services, backed by a secure Node.js and MongoDB API.",
     ],
-    link: null,
+    link: "https://www.healthdirect.gov.au",
   },
   {
     name: "Tritment",
@@ -193,7 +193,7 @@ export const projects = [
     points: [
       "Built a healthcare workflow platform with an intuitive Next.js interface and a scalable TypeScript backend, focused on performance and data security.",
     ],
-    link: null,
+    link: "https://tritmint.com",
   },
 ];
 
