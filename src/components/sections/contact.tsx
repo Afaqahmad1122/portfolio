@@ -1,14 +1,27 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "motion/react";
-import { Mail } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
+import { Check, Copy, Mail } from "lucide-react";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { Reveal } from "@/components/reveal";
 import { profile } from "@/data/resume";
 import { cn } from "@/lib/utils";
 
 export function Contact() {
+  const [copied, setCopied] = useState(false);
+
+  async function copyEmail() {
+    try {
+      await navigator.clipboard.writeText(profile.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      window.location.href = `mailto:${profile.email}`;
+    }
+  }
+
   return (
     <section id="contact" className="mx-auto max-w-6xl px-6 py-24">
       <Reveal className="relative overflow-hidden rounded-3xl border border-border bg-card px-6 py-16 text-center sm:px-12">
@@ -29,11 +42,22 @@ export function Contact() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a
-              href={`mailto:${profile.email}`}
+              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${profile.email}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className={cn(buttonVariants({ size: "lg" }), "h-10 px-5")}
             >
               <Mail /> {profile.email}
             </a>
+            <Button
+              variant="outline"
+              size="lg"
+              className="h-10 px-5"
+              onClick={copyEmail}
+            >
+              {copied ? <Check /> : <Copy />}
+              {copied ? "Copied" : "Copy email"}
+            </Button>
             <a
               href={profile.linkedin}
               target="_blank"

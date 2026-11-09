@@ -145,7 +145,7 @@ export function Hero() {
             View my work
           </a>
           <a
-            href={`mailto:${profile.email}`}
+            href="#contact"
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
               "h-10 px-5",
